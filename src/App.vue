@@ -1,9 +1,11 @@
 <template>
-  <div class="bg-[url('assets/images/bg.png')] bg-cover bg-center h-screen text-white p-5 flex overflow-hidden">
+  <div
+    class="bg-[url('assets/images/bg.png')] bg-cover bg-center h-screen text-white p-5 flex overflow-hidden"
+  >
     <!-- 左 -->
     <div class="flex-1 mr-5 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- ANCHOR - 横向柱状图 -->
-      <HorizontalBar class="h-1/3 box-border pb-4"></HorizontalBar>
+      <HorizontalBar :data="data.regionData" class="h-1/3 box-border pb-4"></HorizontalBar>
       <!-- ANCHOR - 雷达图 -->
       <RadarBar class="h-1/3 box-border pb-4"></RadarBar>
       <!-- ANCHOR - 关系图 -->
@@ -29,28 +31,26 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
-import HorizontalBar from './components/HorizontalBar.vue';
-import VerticalBar from './components/VerticalBar.vue';
-import MapChart from './components/MapChart.vue';
-import Relation from './components/Relation.vue';
-import RingBar from './components/RingBar.vue';
-import TotalData from './components/TotalData.vue';
-import WordCloud from './components/WordCloud.vue';
-import RadarBar from './components/RadarBar.vue';
-import {getVisualization} from '@/api/index.js'
+import { ref, onMounted } from "vue";
+import HorizontalBar from "@/components/HorizontalBar.vue";
+import VerticalBar from "@/components/VerticalBar.vue";
+import MapChart from "@/components/MapChart.vue";
+import Relation from "@/components/Relation.vue";
+import RingBar from "@/components/RingBar.vue";
+import TotalData from "@/components/TotalData.vue";
+import WordCloud from "@/components/WordCloud.vue";
+import RadarBar from "@/components/RadarBar.vue";
+import { getVisualization } from "@/api/index.js";
 
-const data = ref([])
-const loadData = async()=>{
+const data = ref([]);
+
+async function getData() {
   data.value = await getVisualization()
-  console.log(data.value);
 }
-
+getData()
 setInterval(() => {
-  loadData()
+  getData()
 }, 3000);
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

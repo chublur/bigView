@@ -19,9 +19,9 @@ service.interceptors.request.use(config => {
 // 响应拦截器
 
 service.interceptors.response.use(response => {
-    const {success , message ,data} = response.data;
+    const {success , message ,allData} = response.data;
     if (success) {
-        return data;
+        return allData;
     }else {
         return Promise.reject(message);
     }
