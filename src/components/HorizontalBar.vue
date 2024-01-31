@@ -8,16 +8,15 @@
 <script setup>
 import { ref, defineProps, onMounted } from "vue";
 import * as echarts from "echarts";
+// 1.初始化echarts实例
+let mChart = null;
+const target = ref(null);
 const props = defineProps({
   data: {
     type: Object,
     requeire: true,
   },
 });
-console.log("sad", props.data.regions);
-// 1.初始化echarts实例
-let mChart = null;
-const target = ref(null);
 onMounted(() => {
   mChart = echarts.init(target.value);
   renderChart();

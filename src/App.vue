@@ -21,7 +21,7 @@
     <!-- 右 -->
     <div class="flex-1 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- ANCHOR - 竖向柱状图 -->
-      <VerticalBar class="h-1/3 box-border pb-4"></VerticalBar>
+      <VerticalBar :data="data.verData" class="h-1/3 box-border pb-4"></VerticalBar>
       <!-- ANCHOR - 环形图 -->
       <RingBar class="h-1/3 box-border pb-4"></RingBar>
       <!-- ANCHOR - 文档云图 -->
