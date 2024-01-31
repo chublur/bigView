@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted } from "vue";
+import { ref, defineProps, onMounted ,watch} from "vue";
 import * as echarts from "echarts";
 
 let mChart = null;
@@ -68,16 +68,19 @@ const renderChart = () => {
         barWidth: 12,
         label: {
           show: true,
-          position: "right",
+          position: "top",
           textStyle: {
             color: "#fff",
           },
+          formatter: "{c}%",
         },
       },
     ],
   };
   mChart.setOption(options);
 };
+
+watch(()=>props.data,renderChart)
 </script>
 
 <style lang="scss" scoped></style>

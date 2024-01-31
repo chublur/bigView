@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, onMounted } from "vue";
+import { ref, defineProps, onMounted ,watch} from "vue";
 import * as echarts from "echarts";
 // 1.初始化echarts实例
 let mChart = null;
@@ -87,6 +87,8 @@ const renderChart = () => {
   // 3..setoption
   mChart.setOption(options);
 };
+
+watch(()=> props.data, renderChart)
 </script>
 
 <style lang="scss" scoped></style>

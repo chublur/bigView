@@ -5,7 +5,10 @@
     <!-- 左 -->
     <div class="flex-1 mr-5 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- ANCHOR - 横向柱状图 -->
-      <HorizontalBar :data="data.regionData" class="h-1/3 box-border pb-4"></HorizontalBar>
+      <HorizontalBar
+        :data="data.regionData"
+        class="h-1/3 box-border pb-4"
+      ></HorizontalBar>
       <!-- ANCHOR - 雷达图 -->
       <RadarBar class="h-1/3 box-border pb-4"></RadarBar>
       <!-- ANCHOR - 关系图 -->
@@ -21,7 +24,10 @@
     <!-- 右 -->
     <div class="flex-1 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- ANCHOR - 竖向柱状图 -->
-      <VerticalBar :data="data.verData" class="h-1/3 box-border pb-4"></VerticalBar>
+      <VerticalBar
+        :data="data.verData"
+        class="h-1/3 box-border pb-4"
+      ></VerticalBar>
       <!-- ANCHOR - 环形图 -->
       <RingBar class="h-1/3 box-border pb-4"></RingBar>
       <!-- ANCHOR - 文档云图 -->
@@ -31,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, reactive } from "vue";
 import HorizontalBar from "@/components/HorizontalBar.vue";
 import VerticalBar from "@/components/VerticalBar.vue";
 import MapChart from "@/components/MapChart.vue";
@@ -40,16 +46,23 @@ import RingBar from "@/components/RingBar.vue";
 import TotalData from "@/components/TotalData.vue";
 import WordCloud from "@/components/WordCloud.vue";
 import RadarBar from "@/components/RadarBar.vue";
-import { getVisualization } from "@/api/index.js";
+// import { getVisualization } from "@/api/index.js";
 
 const data = ref([]);
+// 本地mock数据
+import mockData from "./utils/mockData";
+let _mockData = reactive(mockData);
 
-async function getData() {
-  data.value = await getVisualization()
+// const getData = async() => {
+//   data.value = await getVisualization()
+// };
+
+function getData() {
+  data.value = _mockData;
 }
-getData()
+getData();
 setInterval(() => {
-  getData()
+  getData();
 }, 3000);
 </script>
 

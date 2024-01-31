@@ -1,32 +1,33 @@
-import axios from 'axios';
+import axios from "axios";
+
+let _env = import.meta.env
+// 开发环境走代理，生产环境走服务端
+let url = _env.MODE == 'development'?_env.VITE_APP_BASE_API:_env.VITE_HOST_URL
 
 const service = axios.create({
-    baseURL:'https://www.fastmock.site/mock/f77346976c3e5f4014d420ac460dc8d9/ftl',
-    timeout: 5000
+  baseURL:url,
+  timeout:5000,
 })
 
 // 请求拦截器
-
-service.interceptors.request.use(config => {
-    (config)=>{
-        config.headers.icode = 'chublur'
-    }
-    return config;
-}, error => {
-    return Promise.reject(error);
-})
+service.interceptors.request.use(
+  (config) => {
+    // config.headers.icode = ''
+      return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 // 响应拦截器
-
-service.interceptors.response.use(response => {
-    const {success , message ,allData} = response.data;
-    if (success) {
-        return allData;
-    }else {
-        return Promise.reject(message);
-    }
-}, error => {
-    return Promise.reject(error);
+service.interceptors.response.use((response) => {
+  const { success, message, data } = response.data
+  if (success) {
+    return data
+  } else {
+    return Promise.reject(new Error(message))
+  }
 })
 
-export default service;
+export default service
