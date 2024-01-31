@@ -10,7 +10,7 @@
         class="h-1/3 box-border pb-4"
       ></HorizontalBar>
       <!-- ANCHOR - 雷达图 -->
-      <RadarBar class="h-1/3 box-border pb-4"></RadarBar>
+      <RadarBar :data="data.riskData" class="h-1/3 box-border pb-4"></RadarBar>
       <!-- ANCHOR - 关系图 -->
       <Relation class="h-1/3"></Relation>
     </div>
