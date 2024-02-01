@@ -12,14 +12,14 @@
       <!-- ANCHOR - 雷达图 -->
       <RadarBar :data="data.riskData" class="h-1/3 box-border pb-4"></RadarBar>
       <!-- ANCHOR - 关系图 -->
-      <Relation class="h-1/3"></Relation>
+      <Relation :data="data.relationData" class="h-1/3"></Relation>
     </div>
     <!-- 中 -->
     <div class="w-1/2 mr-5 flex flex-col">
       <!-- ANCHOR - 数据总览 -->
-      <TotalData class="bg-opacity-50 bg-slate-800 p-3"></TotalData>
+      <TotalData :data="data.totalData" class="bg-opacity-50 bg-slate-800 p-3"></TotalData>
       <!-- ANCHOR - 地图可视化 -->
-      <MapChart class="bg-opacity-50 bg-slate-800 p-3 mt-4 flex-1"></MapChart>
+      <MapChart :data="data.mapData" class="bg-opacity-50 bg-slate-800 p-3 mt-4 flex-1"></MapChart>
     </div>
     <!-- 右 -->
     <div class="flex-1 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
@@ -31,7 +31,7 @@
       <!-- ANCHOR - 环形图 -->
       <RingBar :data="data.abnormalData" class="h-1/3 box-border pb-4"></RingBar>
       <!-- ANCHOR - 文档云图 -->
-      <WordCloud class="h-1/3"></WordCloud>
+      <WordCloud :data="data.wordCloudData" class="h-1/3"></WordCloud>
     </div>
   </div>
 </template>
