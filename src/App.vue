@@ -29,7 +29,7 @@
         class="h-1/3 box-border pb-4"
       ></VerticalBar>
       <!-- ANCHOR - 环形图 -->
-      <RingBar class="h-1/3 box-border pb-4"></RingBar>
+      <RingBar :data="data.abnormalData" class="h-1/3 box-border pb-4"></RingBar>
       <!-- ANCHOR - 文档云图 -->
       <WordCloud class="h-1/3"></WordCloud>
     </div>
