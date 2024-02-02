@@ -86,26 +86,6 @@ const mockData = {
   // 地图
   mapData: {
     categoryData: {
-      2019: [
-        { name: '北京', value: utils.createRandom(1, 100) },
-        { name: '天津', value: utils.createRandom(1, 100) },
-        { name: '河北', value: utils.createRandom(1, 100) },
-        { name: '山西', value: utils.createRandom(1, 100) },
-        { name: '内蒙古', value: utils.createRandom(1, 100) },
-        { name: '辽宁', value: utils.createRandom(1, 100) },
-        { name: '吉林', value: utils.createRandom(1, 100) },
-        { name: '黑龙江', value: utils.createRandom(1, 100) },
-        { name: '上海', value: utils.createRandom(1, 100) },
-        { name: '江苏', value: utils.createRandom(1, 100) },
-        { name: '安徽', value: utils.createRandom(1, 100) },
-        { name: '浙江', value: utils.createRandom(1, 100) },
-        { name: '福建', value: utils.createRandom(1, 100) },
-        { name: '山西', value: utils.createRandom(1, 100) },
-        { name: '山东', value: utils.createRandom(1, 100) },
-        { name: '河南', value: utils.createRandom(1, 100) },
-        { name: '河北', value: utils.createRandom(1, 100) },
-        { name: '云南', value: utils.createRandom(1, 100) },
-      ],
       2020: [
         { name: '北京', value: utils.createRandom(1, 100) },
         { name: '天津', value: utils.createRandom(1, 100) },
@@ -167,6 +147,26 @@ const mockData = {
         { name: '云南', value: utils.createRandom(1, 100) },
       ],
       2023: [
+        { name: '北京', value: utils.createRandom(1, 100) },
+        { name: '天津', value: utils.createRandom(1, 100) },
+        { name: '河北', value: utils.createRandom(1, 100) },
+        { name: '山西', value: utils.createRandom(1, 100) },
+        { name: '内蒙古', value: utils.createRandom(1, 100) },
+        { name: '辽宁', value: utils.createRandom(1, 100) },
+        { name: '吉林', value: utils.createRandom(1, 100) },
+        { name: '黑龙江', value: utils.createRandom(1, 100) },
+        { name: '上海', value: utils.createRandom(1, 100) },
+        { name: '江苏', value: utils.createRandom(1, 100) },
+        { name: '安徽', value: utils.createRandom(1, 100) },
+        { name: '浙江', value: utils.createRandom(1, 100) },
+        { name: '福建', value: utils.createRandom(1, 100) },
+        { name: '山西', value: utils.createRandom(1, 100) },
+        { name: '山东', value: utils.createRandom(1, 100) },
+        { name: '河南', value: utils.createRandom(1, 100) },
+        { name: '河北', value: utils.createRandom(1, 100) },
+        { name: '云南', value: utils.createRandom(1, 100) },
+      ],
+      2024: [
         { name: '北京', value: utils.createRandom(1, 100) },
         { name: '天津', value: utils.createRandom(1, 100) },
         { name: '河北', value: utils.createRandom(1, 100) },
@@ -190,35 +190,35 @@ const mockData = {
     colors: ['#1DE9B6', '#F46E36', '#04B9FF', '#5DBD32', '#FFC809',
       '#FB95D5', 'BDA29A', '6E7074', '#546570','C4CCD3'],
     topData: {
-      2019: [
+      2020: [
         {name:"天津",value:[117.2,39.12,84.1]},
         {name:"河北",value:[114.52,38.05,68.1]},
         {name:"河南",value:[113.62,34.75,50.1]},
         {name:"山东",value:[116.98,36.67,80.1]},
         {name:"安徽",value:[117.4219,38.4189,60]},
       ],
-      2020: [
+      2021: [
         {name:"山西",value:[112.55,37.87,84.1]},
         {name:"内蒙",value:[111.73,40.83,68.1]},
         {name:"辽宁",value:[123.43,41.8,50.1]},
         {name:"山东",value:[116.98,36.67,80.1]},
         {name:"吉林",value:[125.32,43.9,60]},
       ],
-      2021: [
+      2022: [
         {name:"天津",value:[117.2,39.12,84.1]},
         {name:"河北",value:[114.52,38.05,68.1]},
         {name:"河南",value:[113.62,34.75,50.1]},
         {name:"山东",value:[116.98,36.67,80.1]},
         {name:"安徽",value:[117.4219,39.4189,60]},
       ],
-      2022: [
+      2023: [
         {name:"重庆",value:[106.55,29.57,84.1]},
         {name:"四川",value:[104.07,30.67,68.1]},
         {name:"贵州",value:[106.63,26.65,50.1]},
         {name:"云南",value:[102.72,25.05,80.1]},
         {name:"广西",value:[108.37,22.82,60]},
       ],
-      2023: [
+      2024: [
         {name:"陕西",value:[108.93,34.27,84.1]},
         {name:"甘肃",value:[103.82,36.07,68.1]},
         {name:"宁夏",value:[106.28,38.47,50.1]},
@@ -226,7 +226,7 @@ const mockData = {
         {name:"云南",value:[102.72,25.05,60]},
       ]
     },
-    voltageLevel: ['2019', '2020', '2021', '2022', '2023'],
+    voltageLevel: ['2020', '2021', '2022', '2023','2024'],
   }
 }
 
