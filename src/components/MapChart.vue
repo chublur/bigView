@@ -83,7 +83,7 @@ const renderChart = () => {
         show: true,
         map: "china",
         roam: true,
-        zoom: 1,
+        zoom: 0.8,
         center: [113.83531246, 34.0267395887],
         label: {
           show: false,
@@ -202,6 +202,33 @@ const renderChart = () => {
           },
           data: props.data.categoryData[item].map((item) => item.value),
         },
+        // 散点图
+        {
+          type:'effectScatter',
+          coordinateSystem: 'geo',
+          data:props.data.topData[item],
+          symbolSize: function(val){
+            return val[2]/8;
+          },
+          showEffectOn:'render',
+          rippleEffect: {
+            brushType:'stroke'
+          },
+          label:{
+            normal:{
+              formatter:'{b}',
+              position:'right',
+              show:true
+            }
+          },
+          itemStyle:{
+            normal:{
+              color:props.data.colors[index],
+              shadowColor:props.data.colors[index],
+              shadowBlur:5,
+            }
+          }
+        }
       ],
     });
   });
